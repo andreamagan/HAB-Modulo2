@@ -47,6 +47,7 @@ const cumple = "23.07.1993"; //const es una constante
 //cumple = "25.07.1993" <-- Esto es un error porque intentamos cambiar el valor de una constante.
 
 // Ejercicios de variables
+
 // 1
 let admin;
 let name;
