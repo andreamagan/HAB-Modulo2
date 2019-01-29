@@ -5,51 +5,50 @@
 
 console.log("Probando, probando, 1, 2, 3!");
 
-// Ejercicios strings
+/**
+ * Crea una funcion que checkee un string
+ * y devuelva true/false dependiendo de si es palindromo o no
+ *
+ */
 
-//Ejercicio 01 - Escriba una función ucFirst (str) que devuelva la cadena str con el primer carácter en mayúsculas, por ejemplo:
+function checkString(str) {
+  let lowerstr = str.toLowerCase();
+  console.log();
+  let longitud = str.length;
 
-function ucFirst(str) {
-    return str[0].toUpperCase() + str.slice(1);
+  let pos = 0;
+
+  for (i = 0; i <= longitud; i++) {
+    lowerstr[pos] == lowerstr[-pos];
+    pos = pos++;
+  }
 }
 
-let userString = prompt("Escribe un string");
-alert( ucFirst(userString) ); //
+let str = "Abcba";
+alert(checkString());
 
+//0-pasar el string a lowercase para que no de error si hay mayúsculas
+//1-dividir el string por la Mitad
+//2-comparar el primer char y el ultimo, y así uno a uno hasta la mitad
 
-//Ejercicio 02 Escriba una función checkSpam (str) que devuelva true si str contiene 'viagra' o 'XXX'; de lo contrario, `false.
+/*
+function checkString(str) {
+  let lowerstr = str.toLowerCase();
+  console.log();
+  let longitud = str.length;
 
-//La función debe ser insensible a mayúsculas y minúsculas:
-function checkSpam(str) {
-    let lowerStr = str.toLowerCase();
-  
-    return lowerStr.includes('viagra') || lowerStr.includes('xxx');
-  }
+  let pos = 0;
+  let i;
+  do {
+    lowerstr[pos] == lowerstr[-pos];
+    i++;
+  } while (i < (longitud/2);
+}
 
-checkSpam('buy ViAgRA now') == true
-checkSpam('free xxxxx') == true
-checkSpam("innocent rabbit") == false
+let str = "Abcba";
+alert(checkString(str));
 
-//Ejercicio 03 
-//Cree una función truncate (str, maxlength) que verifique la longitud del str y, si excede de maxlength - reemplaza el final de str con el carácter de puntos suspensivos"...", para hacer su longitud igual a maxlength.
-
-//El resultado de la función debe ser la cadena truncada (si es necesario).
-
-function truncate(str, maxlength) {
-    return (str.length > maxlength) ? 
-      str.slice(0, maxlength - 1) + '…' : str; //si tiene menos de la longitud máxima, se añaden ...
-  }
-
-truncate("What I'd like to tell on this topic is:", 20) = "What I'd like to te…"
-
-truncate("Hi everyone!", 20) = "Hi everyone!"
-
-//Ejercicio 04 Tenemos un costo en la forma " $ 120 ". Es decir: el signo de dólar va primero, y luego el número.
-
-//Cree una función extractCurrencyValue (str) que extraiga el valor numérico de dicha cadena y la devuelva.
-
-function extractCurrencyValue(str) {
-    return +str.slice(1); // + delante para pasar el string a numero (1) para devolver la cadena desde el segundo caracter
-  }
-
-alert( extractCurrencyValue('$120') === 120 ); // 
+//0-pasar el string a lowercase para que no de error si hay mayúsculas
+//1-dividir el string por la Mitad
+//2-comparar el primer char y el ultimo, y así uno a uno hasta la mitad
+*/
