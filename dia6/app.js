@@ -285,6 +285,4 @@ let lowResolutionClock = new PowerClock({
 lowResolutionClock.start();
 
 /* Your class should work like this: */
-/*
-     
-    */
+/* */
