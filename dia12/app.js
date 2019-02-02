@@ -63,7 +63,7 @@ let filtered = filterRange(arr, 1, 4);
 alert(filtered); // 3,1 (matching values)
 alert(arr); // 5,3,8,1 (not modified)
 */
-
+/*
 //Ejercicio 3
 //Escriba una función filterRangeInPlace(arr, a, b) que obtiene un array arr y elimina de el todos los valores excepto aquellos que están entre a y b. La prueba es: a ≤ arr[i] ≤ b
 //La función solo debe modificar el array. No debe devolver nada
@@ -75,7 +75,7 @@ function filterRangeInPlace(arr, a, b) {
   }
 }
 }
-
+*/
 /*
 //Ejercicio 4
 
@@ -106,28 +106,23 @@ filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
 
 alert( arr ); // [3, 1]
 */
-
+/*
 //Ejercicio 5
 // Tenemos un array de strings arr. Nos gustaría tener una copia ordenada del mismo, pero no modifiquemos arr.
 // Cree una función copySorted(arr) que devuelva dicha copia.
 
-
-/*
-function copySorted(arr){
-    let cloneArr = arr.slice(0);
-    return cloneArr.sort();
-
+function copySorted(arr) {
+  let cloneArr = arr.slice(0);
+  return cloneArr.sort();
 }
 
 let arr = ["HTML", "JavaScript", "CSS"];
 
 let sorted = copySorted(arr);
 
-console.log( sorted ); // CSS, HTML, JavaScript
-console.log( arr ); // HTML, JavaScript, CSS (no changes)
-
+console.log(sorted); // CSS, HTML, JavaScript
+console.log(arr); // HTML, JavaScript, CSS (no changes)
 */
-
 /*
 //Ejercicio 6 - Map to names
 //Tenemos un array de objetos user,cada uno tiene user.name. Escribe el código que lo convierte en una matriz de nombres.
@@ -141,6 +136,7 @@ let users = [ john, pete, mary ];
 let names = users.map(item =>item.name);
 alert( names ); // John, Pete, Mary
 */
+
 /*
 //Ejercicio 6 - Create an extendable calculator
 //Cree una función constructora Calculator que crea objetos de calculadora" extendable ".
@@ -165,6 +161,7 @@ let result = powerCalc.calculate("2 ** 3");
 alert( result ); // 8
 
 */
+
 /*
 //Ejercicio 7 - Map to objects
 //Tienes un conjunto de objetos user, cada uno tiene name, surname y id.
@@ -185,16 +182,17 @@ let usersMapped = users.map(user => ({
 alert( usersMapped[0].id ) // 1
 alert( usersMapped[0].fullName ) // John Smith
 */
-/*
+
 //Ejercicio 8 - Sort objects
 //Escriba la función sortByName(users) que obtiene una matriz de objetos con la propiedad name y la ordena.
 
 function sortByName(arr) {
-    let userWithName= arr.filter(item => item.name !=null);
-    console.log(userWithName);//jonh, pete, mary. Rubén no está porque no tiene name.
+  let userWithName = arr.filter(item => item.name != null);
+  //   console.log(userWithName); //jonh, pete, mary. Rubén no está porque no tiene name.
 
-    userWithName.sort((a, b) => b.name > a.name ? 1 : -1) ;
-    console.log(userWithName);//Comprobar si el array está ordenado
+  userWithName = userWithName.sort((a, b) => (b.name < a.name ? 1 : -1));
+  //   console.log(userWithName); //Comprobar si el array está ordenado
+  return userWithName;
 }
 
 let john = { name: "John", age: 25 };
@@ -202,13 +200,10 @@ let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 28 };
 let ruben = { age: 28 };
 
-let users = [ john, pete, mary ];
+let users = [john, pete, mary];
 
-sortByName(users);
- console.log(users); // now: Debería ser [john, mary, pete] pero no lo es :(
-
-alert(users[1].name); // Mary
-*/
+users = sortByName(users);
+console.log(users[1].name); //Mary
 
 /*
 //Ejercicio 9 - Shuffle an array
@@ -217,6 +212,8 @@ alert(users[1].name); // Mary
 //Todas las órdenes de elementos deben tener una probabilidad igual. Por ejemplo, [1,2,3] se puede reordenar como [1,2,3] o [1,3,2] o [3,1,2] etc., con la misma probabilidad de cada caso.
 
 let arr = [1, 2, 3];
+
+
 
 shuffle(arr);
 // arr = [3, 2, 1]
@@ -251,7 +248,7 @@ let arr = [ john, pete, mary ];
 alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 */
 
-
+/*
 //Ejercicio 11 - Filter unique array members
 //Dejemos que 'arr` sea una matriz.
 //Cree una función unique(arr) que debería devolver una matriz con elementos únicos de arr.
@@ -272,3 +269,4 @@ let strings = ["Hare", "Krishna", "Hare", "Krishna",
 ];
 
 alert( unique(strings) ); // Hare, Krishna, :-O
+*/
