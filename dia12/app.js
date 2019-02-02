@@ -106,25 +106,90 @@ let usersMapped = users.map(user => ({
 alert( usersMapped[0].id ) // 1
 alert( usersMapped[0].fullName ) // John Smith
 */
-
+/*
 //Ejercicio 8 - Sort objects
 //Escriba la función sortByName(users) que obtiene una matriz de objetos con la propiedad name y la ordena.
 
-
-
-
-function sorByName(arr) {
+function sortByName(arr) {
     let userWithName= arr.filter(item => item.name !=null);
-    return userWithName.sort();
+    console.log(userWithName);//jonh, pete, mary. Rubén no está porque no tiene name.
+
+    userWithName.sort((a, b) => b.name > a.name ? 1 : -1) ;
+    console.log(userWithName);//Comprobar si el array está ordenado
 }
 
 let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 28 };
+let ruben = { age: 28 };
 
 let users = [ john, pete, mary ];
 
 sortByName(users);
+ console.log(users); // now: Debería ser [john, mary, pete] pero no lo es :(
 
-// now: [john, mary, pete]
 alert(users[1].name); // Mary
+*/
+
+/*
+//Ejercicio 9 - Shuffle an array
+//Escribe la función shuffle(array) que baraja (reordena aleatoriamente) los elementos del array.
+//Las ejecuciones múltiples de shuffle pueden llevar a diferentes órdenes de elementos.
+//Todas las órdenes de elementos deben tener una probabilidad igual. Por ejemplo, [1,2,3] se puede reordenar como [1,2,3] o [1,3,2] o [3,1,2] etc., con la misma probabilidad de cada caso.
+
+let arr = [1, 2, 3];
+
+shuffle(arr);
+// arr = [3, 2, 1]
+
+shuffle(arr);
+// arr = [2, 1, 3]
+
+shuffle(arr);
+// arr = [3, 1, 2]
+// ...
+
+*/
+
+/*
+//Ejercicio 10 - Get average age
+//Escriba la función getAverageAge(users) que obtiene una matriz de objetos con propiedad age y obtiene el promedio.
+//La fórmula para el promedio es (age1 + age2 + ... + ageN) / N.
+
+function getAverageAge(arr){
+    let sumAges = arr.reduce((sum, current) => sum + current.age, 0);
+    console.log(sumAges);
+    let average = (sumAges/arr.length);
+    return average;
+}
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+*/
+
+
+//Ejercicio 11 - Filter unique array members
+//Dejemos que 'arr` sea una matriz.
+//Cree una función unique(arr) que debería devolver una matriz con elementos únicos de arr.
+
+function unique(arr) {
+    let results = [];
+    for(let str of arr){
+        if (!results.includes(str)){
+        results.push(str);
+    }
+    }
+    console.log(results);
+    return results;        
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(strings) ); // Hare, Krishna, :-O
