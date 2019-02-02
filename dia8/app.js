@@ -113,13 +113,16 @@ arr[2](); // a,b,function(){alert(this);}
 // Calcula y devuelve la suma de elementos de array.
 // PD Un cero 0 es un número válido, por favor no detenga la entrada en cero. [demo]
 
-let message;
+// let message;
+// let arr = [];
+// do {
+//   message = +prompt("Escribe un número");
+//   console.log(message);
+//   // arr.push(message);
+// } while (message !== NaN);
 
-do {
-  let arr = [];
-  message = +prompt("Escribe un número");
-  arr.push(message);
-} while (message != NaN || (message = "") || (message = null));
+// // alert(arr);
+// //bucle infinito
 
-alert(arr);
-//bucle infinito
+// let message;
+// let arr =[];
